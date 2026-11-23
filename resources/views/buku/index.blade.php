@@ -69,6 +69,7 @@
                     <tr>
                         <th class="ps-3" style="width: 50px;">No</th>
                         {{-- TODO 9: Tambahkan header kolom Sampul --}}
+                        <th style="width: 80px;">Sampul</th>
                         <th>Judul Buku</th>
                         <th>Penulis</th>
                         <th>Penerbit</th>
@@ -82,6 +83,15 @@
                         <tr>
                             <td class="ps-3 text-muted">{{ $buku->firstItem() + $index }}</td>
                             {{-- TODO 9: Tampilkan thumbnail sampul buku ($item->cover) jika ada menggunakan asset('storage/' . $item->cover) --}}
+                            <td>
+                                @if($item->cover)
+                                    <img src="{{ asset('storage/' . $item->cover) }}" alt="{{ $item->judul }}" class="rounded shadow-sm" style="width: 48px; height: 64px; object-fit: cover;">
+                                @else
+                                    <div class="bg-light text-muted rounded d-flex align-items-center justify-content-center border" style="width: 48px; height: 64px; font-size: 0.65rem;">
+                                        <i class="bi bi-image text-secondary"></i>
+                                    </div>
+                                @endif
+                            </td>
                             <td class="fw-semibold text-dark">{{ $item->judul }}</td>
                             <td>{{ $item->penulis }}</td>
                             <td>{{ $item->penerbit }}</td>
