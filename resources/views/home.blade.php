@@ -184,6 +184,7 @@
             @endif
         </div>
 
+        {{-- TODO 10: Tampilkan grid kartu katalog koleksi buku dengan thumbnail sampul dan badge status stok --}}
         {{-- Grid Katalog Buku --}}
         <div class="row">
             @forelse($buku as $item)

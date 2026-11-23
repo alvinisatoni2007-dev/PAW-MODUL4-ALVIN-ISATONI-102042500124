@@ -26,6 +26,7 @@ class User extends Authenticatable
         'role'
     ];
 
+    // TODO 1: Tambahkan method relasi peminjaman() (One-to-Many ke model Peminjaman)
     /**
      * Relasi One-to-Many ke model Peminjaman.
      */

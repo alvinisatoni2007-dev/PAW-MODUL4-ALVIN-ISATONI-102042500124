@@ -12,6 +12,13 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        // TODO 3: Lengkapi logika index():
+        // 1. Buat query pencarian berdasarkan judul, penulis, atau penerbit jika ada input 'search'
+        // 2. Tambahkan filter penerbit dan filter ketersediaan stok jika ada input 'penerbit' / 'status'
+        // 3. Tambahkan pengurutan data berdasarkan input 'sort' (judul, tahun, stok, default: latest)
+        // 4. Lakukan paginasi 8 data dengan withQueryString()
+        // 5. Ambil list penerbit unik untuk opsi dropdown filter
+        // 6. Return view 'home' dengan data buku dan list penerbit
         $query = Buku::query();
 
         // 1. Pencarian berdasarkan judul, penulis, atau penerbit
@@ -74,6 +81,7 @@ class HomeController extends Controller
      */
     public function show(Buku $buku)
     {
+        // TODO 3: Kembalikan view 'home_show' membawa data $buku
         return view('home_show', compact('buku'));
     }
 }
