@@ -14,6 +14,7 @@ class RoleMiddleware
         $user = Auth::user();
 
         // TODO: Periksa apakah user login dan memiliki peran yang diizinkan (role-based authorization)
+        //inaraf
         if (!$user || !in_array($user->role, $roles)) {
             return redirect()->route('home')
                 ->with('error', 'Akses ditolak! Anda tidak memiliki izin untuk mengakses halaman tersebut.');
